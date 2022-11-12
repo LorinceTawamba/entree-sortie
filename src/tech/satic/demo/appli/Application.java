@@ -1,6 +1,7 @@
 package tech.satic.demo.appli;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Properties;
@@ -44,5 +45,14 @@ public class Application {
             System.out.println("====== Echec de création de répertoires ======");
         }
 
+        File newFile = new File(System.getProperty("user.home"), "MonNOuveauFichier.txt");
+        try {
+            if (newFile.createNewFile()) {
+                System.out.println("====== Fichier crée avec succès ======");
+            }
+        }
+        catch (IOException exc) {
+            exc.printStackTrace();
+        }
     }
 }
