@@ -54,5 +54,47 @@ public class Application {
         catch (IOException exc) {
             exc.printStackTrace();
         }
+
+        System.out.println("===== AVANT =====");
+        // Afficher les permissions associées au fichier
+        System.out.println("Exécutable: " + newFile.canExecute());
+        System.out.println("Lecture: " + newFile.canRead());
+        System.out.println("Ecriture: "+ newFile.canWrite());
+
+        System.out.println("===== APRES =====");
+        // Changer les permissions
+        newFile.setExecutable(false);
+        newFile.setReadable(false);
+        newFile.setWritable(false);
+
+        // Afficher les permissions associées au fichier
+        System.out.println("Exécutable: " + newFile.canExecute());
+        System.out.println("Lecture: " + newFile.canRead());
+        System.out.println("Ecriture: "+ newFile.canWrite());
+
+
+
+   /*     boolean peuExecuter = newFile.canExecute();
+        //boolean peuLire     = newFile.canRead();
+        //boolean peuEcrire   = newFile.canWrite();
+        System.out.println("Peu exécuter ? : " + peuExecuter);
+        //System.out.println("Peu lire ? : " + peuLire);
+        //System.out.println("Peu ecrire ? : " + peuEcrire);
+
+        System.out.println("===== APRES =====");
+        boolean resultat = false;
+        resultat = newFile.setExecutable(false);
+        //resultat = newFile.setReadOnly();
+        //resultat = newFile.setReadable(false);
+        //resultat = newFile.setWritable(false);
+
+        peuExecuter = newFile.canExecute();
+        //peuLire     = newFile.canRead();
+        //peuEcrire   = newFile.canWrite();
+        System.out.println("Peu exécuter ? : " + peuExecuter);
+        //System.out.println("Peu lire ? : " + peuLire);
+        //System.out.println("Peu ecrire ? : " + peuEcrire);
+
+    */
     }
 }
