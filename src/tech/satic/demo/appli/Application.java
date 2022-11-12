@@ -34,5 +34,15 @@ public class Application {
         else {
             System.out.println("====== Echec de création de répertoire ======");
         }
+
+        String subFolderPath = folderPath + separator + "Projet" + separator + "Config";
+        newFolder = new File(subFolderPath);
+        if (newFolder.mkdirs()) {
+            System.out.println("====== Répertoires crée avec succès ======");
+        }
+        else {
+            System.out.println("====== Echec de création de répertoires ======");
+        }
+
     }
 }
